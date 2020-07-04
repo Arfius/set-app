@@ -19,30 +19,12 @@ The architecture of this software is ispired to the uncle Bob's *Clean Architect
 This will be an instance of a database. 
 **MongoDB** will be used.
 
-```mermaid
-sequenceDiagram
-participant MonogoDB
-participant IDatabase
-participant Infrastructure
-participant Conf
-Conf-->>Infrastructure:type:MongoDB
-MonogoDB-->>IDatabase:extends
-IDatabase->> Infrastructure:new instance
-```
+<img src="imgsReadMe/d1.png"/>
 
 #### 1.1.2 WebAPI 
 This will be an instance of a WebApi Lib. **ExpressJS** will be used.
 
-```mermaid
-sequenceDiagram
-participant ExpressJS
-participant IWebAPI
-participant Infrastructure
-participant Conf
-Conf-->>Infrastructure:type:ExpressJS
-ExpressJS-->>IWebAPI:extends
-IWebAPI->> Infrastructure:new instance
-```
+<img src="imgsReadMe/d2.png"/>
 
 #### 1.1.3 Mobile Application 
 The mobile application is the main user interface. The **Ionic4** framework will be used. Data will be stored in the **sql-lite** mobile database. The UX will accomplish the **Material Design** line guide.
@@ -52,19 +34,8 @@ The mobile application is the main user interface. The **Ionic4** framework will
 
 #### 1.2.1 General diagram for UseCase 
 Trasform the data for the **UseCases** and vice versa.
-```mermaid
-sequenceDiagram
-participant Infrastructure
-participant MainController
-participant UseCase(s)
-participant Data Consumer
 
-Infrastructure-->>MainController:IDatabase & IWebAPI
-UseCase(s)-->>MainController: UseCaseName
-MainController-->>MainController: UseCaseName (IDatabase & IWebAPI)
-UseCase(s)-->>Data Consumer: (data)
-
-```
+<img src="imgsReadMe/d3.png"/>
 
 ### 1.3 Server Uses Cases
 
@@ -122,58 +93,16 @@ UseCase(s)-->>Data Consumer: (data)
 
 
 ### 1.7 UX Workflow MVP
-```mermaid
-graph LR
-    Login --> BottomBar
-    BottomBar --> EventsPage
-    BottomBar --> TasksPage
-    BottomBar --> ProfilePage
-```
+<img src="imgsReadMe/d5.png"/>
+
 #### 1.7.1  Events
-```mermaid
-graph LR
-    EventsPage --> TopBar
-    EventsPage --> EventPage
-    TopBar --> id1((Edit))
-    TopBar --> id2((Add))
-
-    
-    EventPage --> TopBarEvent 
-    TopBarEvent --> id3((Back))
-    TopBarEvent --> id4((Done))
-    TopBarEvent --> id5((...))
-    EventPage --> id6((EventView))
-
-```
+<img src="imgsReadMe/d6.png"/>
 
 #### 1.7.2 Tasks
-```mermaid
-graph LR
-    TasksPage --> TopBar
-    TasksPage --> TaskPage
-    TopBar --> id1((Edit))
-    TopBar --> id2((Add))
-
-    TaskPage --> TopBarTask 
-    TopBarTask --> id3((Back))
-    TopBarTask --> id4((Done))
-    TopBarTask --> id5((...))
-    TaskPage --> id6((TaskView))
-```
+<img src="imgsReadMe/d7.png"/>
 
 #### 1.7.3 Profile
-```mermaid
-graph LR
-    ProfilePage --> Profile
-    Profile --> id6((ProfileView))
-    Profile --> TopBarProfile
-    TopBarProfile --> id4((Done))
-    TopBarProfile --> id5((Back))
-    ProfilePage --> id1((Privacy))
-    ProfilePage --> id2((SyncContact))
-    ProfilePage --> id3((Logout))
-
-```
+<img src="imgsReadMe/d8.png"/>
 
 <hr>
 
