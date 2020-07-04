@@ -1,0 +1,46 @@
+{
+  "name": "set-up",
+  "version": "1.0.0",
+  "description": "Mobile application to organise events sharing micro tasks to friends. ",
+  "main": "setapp-server.js",
+  "scripts": {
+    "start": "DEBUG=set-up*,-not_this DEBUG_COLORS=true node setapp-server.js",
+    "test": "DEBUG=set-up* npm run test-unit",
+    "test-unit": "NODE_ENV=test mocha $(find ./ -name '*.setup.test.js')"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/alfarruggia/set-up.git"
+  },
+  "keywords": [
+    "setup",
+    "event",
+    "tas",
+    "share",
+    "friend",
+    "mobile"
+  ],
+  "author": "Alfonso Farruggia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/alfarruggia/set-up/issues"
+  },
+  "homepage": "https://gitlab.com/alfarruggia/set-up#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "config": "^3.0.1",
+    "debug": "^4.1.1",
+    "mocha": "^6.0.2",
+    "require-dir": "^1.2.0",
+    "should": "^13.2.3",
+    "sinon": "^7.2.7",
+    "supertest": "^3.4.2"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.13",
+    "underscore": "^1.9.1"
+  }
+}
