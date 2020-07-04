@@ -7,7 +7,11 @@ var  event = new Schema({
     deadline:{ type: Date , default:Date.now },
     tasks:[{ type: String }],
     owner:{ type: String },
-    status:{ type: Number }
+    status:{ type: Number },
+    partecipants:[{ type: String }],
+    tasks:[{ type: String }]
+
+   
 
 });
 

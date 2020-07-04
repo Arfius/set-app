@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title *ngIf="wizard==0"> {{"addevent.wizard.event.title"|translate}}</ion-title>
+        <ion-title *ngIf="wizard==1">  {{"addevent.wizard.contacts.title"|translate}}</ion-title>
+        <ion-title *ngIf="wizard==2"> {{"topbar.tasks"|translate}}</ion-title>
+        <ion-buttons slot="end" *ngIf="wizard==2">
+            <ion-button (click)="addTask()">
+                <ion-icon slot="icon-only" name="add" ></ion-icon>
+              </ion-button>
+          </ion-buttons>
+      </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+    <app-event [event]="event" *ngIf="wizard==0"></app-event>
+    <app-contacts [partecipants]="event.partecipants" *ngIf="wizard==1"></app-contacts>
+    <app-task [partecipants]="event.partecipants" [tasklist]="event.tasks" *ngIf="wizard==2"></app-task>
+
+</ion-content>
+
+<ion-footer>
+ 
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-button *ngIf="wizard>0" shape="round" fill="outline" (click)="previous()" >{{ "addevent.footer.previous"|translate}}</ion-button>
+        <ion-button *ngIf="wizard==0" shape="round" fill="outline" (click)="dismiss()" >{{ "addevent.footer.cancel"|translate}}</ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+
+        <ion-button *ngIf="wizard<=1" shape="round" (click)="next()" fill="outline">{{"addevent.footer.next"|translate}}</ion-button>
+        <ion-button *ngIf="wizard==2" shape="round" (click)="save()" fill="outline">{{"addevent.footer.save"|translate}}</ion-button>
+    
+      </ion-buttons>
+
+  </ion-toolbar>
+      
+
+</ion-footer>

@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{"topbar.profile" | translate }}    
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-row class="user-main-data-row">
+      <ion-col no-padding>
+        <span class="img-selected">
+            <img class="crop" src='{{profile.photo}}'/>
+        </span>
+      </ion-col>
+      <ion-col align-self-center>
+        <ion-row >
+          <ion-col center text-center>
+             <div class="num">#10</div>
+              <div class="des"> {{"profile.events" | translate }}</div>
+          </ion-col>
+           <ion-col center text-center>
+            <div class="num">#10</div>
+            <div class="des">{{"profile.tasks" | translate }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row >
+            <ion-col center text-center>
+              <ion-button size="small">{{"profile.edit" | translate }}</ion-button>
+            </ion-col>
+          </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <ion-text color="primary">
+                <p>{{profile.name}}</p>
+              </ion-text>
+        </ion-col>
+
+        <!--ion-col right text-right> 
+          <ion-text color="primary">
+              <p><ion-icon  name="pin"></ion-icon> Staines, UK</p>
+          </ion-text>
+        </ion-col-->
+      </ion-row>
+      <ion-text color="darl">
+          <p>{{profile.status}}</p>
+      </ion-text>
+
+    </ion-content>

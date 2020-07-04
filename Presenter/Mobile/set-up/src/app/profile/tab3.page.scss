@@ -1,0 +1,14 @@
+
+ .img-selected {
+    width: 115px;
+    height: 115px;
+    padding: 5px; 
+    overflow: hidden;
+
+}
+.crop{
+    object-fit: cover;
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+}

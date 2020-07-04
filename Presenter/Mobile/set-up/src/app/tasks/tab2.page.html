@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{"topbar.tasks" | translate }}    
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list >
+    <ion-list-header>
+        <ion-label> {{"events.today" | translate }}    </ion-label>
+      </ion-list-header>
+
+      <div *ngFor="let task of todaytasks">
+        <app-event-task [task]="task" icon="timer" [showdate]="showfalse" (click)="openChat(task)"></app-event-task>
+      </div>
+
+
+    </ion-list>
+
+
+    <ion-list>
+
+    <ion-list-header>
+        <ion-label>{{"events.others" | translate }} </ion-label>
+      </ion-list-header>
+      <div *ngFor="let task of othertasks">
+        <app-event-task [task]="task" icon="airplane" [showdate]="showtrue" (click)="openChat(task)"></app-event-task>
+      </div>
+
+  </ion-list>
+
+</ion-content>

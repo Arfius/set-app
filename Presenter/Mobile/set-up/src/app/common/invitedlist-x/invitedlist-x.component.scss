@@ -1,0 +1,25 @@
+.container {
+    overflow: hidden; 
+    white-space: nowrap;
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    .scroll {
+      overflow: auto;
+    }
+    height: 110px !important;
+  }
+
+  .img-selected {
+    width: 64px;
+    height: 64px;
+    padding: 2px; 
+    overflow: hidden;
+
+}
+.crop{
+    object-fit: cover;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}

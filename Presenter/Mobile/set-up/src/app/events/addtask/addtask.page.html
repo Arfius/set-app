@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{"addevent.wizard.task.title"|translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="isSticky">
+    <ion-item>
+      <ion-input [(ngModel)]="task.title" type="text" placeholder='{{"addevent.wizard.task.titleph"|translate}}'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea [(ngModel)]="task.description" placeholder='{{"addevent.wizard.task.descriptionph"|translate}}'></ion-textarea>
+    </ion-item>
+    <br/>
+    <ion-item class="multi-input time-item">
+      <ion-label floating>{{"addevent.wizard.task.deadline"|translate}}</ion-label>
+      <ion-datetime [(ngModel)]="task.deadline" displayFormat="DD/MM/YY" pickerFormat="DD-MM-YYYY"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+        <ion-label> {{"addevent.wizard.task.labeltome"|translate}}</ion-label>
+        <ion-button size="small" slot="end" (click)="assign()" *ngIf="!task.isyours">
+            {{"addevent.wizard.task.assign"|translate}}
+        </ion-button>
+        <ion-button size="small" slot="end" color="danger" (click)="revoke()" *ngIf="task.isyours">
+            {{"addevent.wizard.task.revoke"|translate}}
+        </ion-button>
+      </ion-item>
+</ion-list>
+  <ion-list *ngIf="!task.isyours">
+      <ion-radio-group [(ngModel)]="task.owner">
+      <ion-list-header>
+        <ion-label floating>{{"addevent.wizard.task.owner"|translate}}</ion-label>
+      </ion-list-header>
+      <div *ngFor="let c of partecipants">
+        <ion-item  *ngIf="c.ischecked">
+            <ion-thumbnail slot="start">
+                <ion-img [src]="c.photo"></ion-img>
+              </ion-thumbnail>
+          <ion-label>  {{c.name}} </ion-label>
+          <ion-radio [value]="c"></ion-radio>
+        </ion-item>
+      </div>
+    </ion-radio-group>
+  </ion-list>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-button shape="round" fill="outline" (click)="dismiss()" >{{ "addevent.footer.cancel"|translate}}</ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+
+      <ion-button *ngIf="!taskToEdit" shape="round" (click)="save()" fill="outline">{{"addevent.footer.save"|translate}}</ion-button>
+      <ion-button *ngIf="taskToEdit" shape="round" (click)="edit()" fill="outline">{{"addevent.footer.edit"|translate}}</ion-button>
+    
+      </ion-buttons>
+
+  </ion-toolbar>
+</ion-footer>

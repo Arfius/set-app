@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> {{"topbar.events" | translate }}   </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+          <ion-icon slot="icon-only" name="switch"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let ev of list">
+      <app-event-item [event]="ev" (click)="editEvent(ev)"></app-event-item> 
+
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="addEvent()">
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+</ion-content>

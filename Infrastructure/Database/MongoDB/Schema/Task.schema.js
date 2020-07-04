@@ -6,7 +6,8 @@ var  task = new Schema({
     description:   { type: String },
     deadline:   { type: Date, default:Date.now },
     owner:   { type: String },
-    status:   { type: Number,default:0 }
+    status:   { type: Number,default:0 },
+    isyours:   { type: Boolean,default:false }
 });
 
 mongoose.model('task', task);

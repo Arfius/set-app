@@ -1,0 +1,8 @@
+<div class="container">
+    <ion-list-header>{{"addevent.wizard.contacts.invited"|translate}}</ion-list-header>
+    <div class="scroll" scrollX="true">
+        <span class="img-selected" *ngFor="let c of list" >
+            <img class="crop" [src]='c.photo' *ngIf="c.ischecked"/>
+        </span>
+    </div>
+</div>

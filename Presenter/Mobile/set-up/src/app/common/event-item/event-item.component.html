@@ -1,0 +1,45 @@
+<ion-list>
+  <ion-item>
+      <ion-grid>
+    <ion-row >
+      <ion-col size="3" class="date">
+          <div class="day">
+              <ion-text color="dark">{{event.deadline|dateDetails:"d"}}</ion-text>
+          </div>
+          <div class="month">
+              <ion-text color="dark">{{event.deadline|dateDetails:"m"}}</ion-text>
+          </div>
+          <div class="year">
+              <ion-text color="dark">{{event.deadline|dateDetails:"y"}}</ion-text>
+          </div>
+      </ion-col>
+    
+      <ion-col size="8">
+          <div class="title"><ion-text color="dark">{{event.title}}</ion-text></div>
+            <ion-grid> 
+                <ion-row> 
+                <ion-col size="4" >
+                    <ion-text color="primary"><span ><ion-icon  name="people"></ion-icon></span><span>&nbsp;{{event.partecipants | counterInJson}}</span></ion-text>
+                </ion-col>
+                <ion-col size="4">
+                    <ion-text color="primary"> <span ><ion-icon  name="clipboard"></ion-icon></span><span>&nbsp;{{event.tasks | counterInJson }}</span></ion-text>
+                </ion-col>
+                <ion-col size="4" >
+                    <ion-text color="primary"> <span ><ion-icon  name="checkmark-circle-outline"></ion-icon></span><span>&nbsp;{{event.tasks | counterInJson:"status":0}}</span> </ion-text>
+                </ion-col>           
+              </ion-row>
+
+              <ion-row> 
+                  <ion-col>
+                      <ion-text color="warning">  <span><ion-icon  name="pin"></ion-icon></span><span>&nbsp;item.location</span></ion-text>
+                  </ion-col>
+              </ion-row>
+            </ion-grid>
+      </ion-col>
+      <ion-col class="align-text-middle" size="1">
+        <ion-icon name="arrow-forward"></ion-icon>
+    </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-item>
+</ion-list>

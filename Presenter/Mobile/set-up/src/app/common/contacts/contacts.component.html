@@ -1,0 +1,14 @@
+<div class="isSticky">
+    <app-invitedlist-x   [list]="partecipants"></app-invitedlist-x> 
+</div>
+
+<ion-list>
+  <ion-list-header> Contacts </ion-list-header>
+    <ion-item *ngFor="let p of contacts" (click)="updatePartecipants(p)">
+        <ion-thumbnail slot="start">
+            <ion-img [src]="p.photo"></ion-img>
+          </ion-thumbnail>
+      <ion-label>{{p.name}}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="p.ischecked"></ion-checkbox>
+    </ion-item>
+  </ion-list>

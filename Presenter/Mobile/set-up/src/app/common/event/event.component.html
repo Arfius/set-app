@@ -1,0 +1,17 @@
+<ion-item>
+    <ion-input [(ngModel)]="event.title" type="text" placeholder='{{"addevent.wizard.event.titleph"|translate}}'></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-textarea [(ngModel)]="event.description" placeholder='{{"addevent.wizard.event.descriptionph"|translate}}'></ion-textarea>
+  </ion-item>
+  <br/>
+  <ion-item class="multi-input time-item">
+    <ion-label floating>{{"addevent.wizard.event.deadline"|translate}}</ion-label>
+    <ion-datetime [(ngModel)]="event.deadline"  displayFormat="DD/MM/YY" pickerFormat="DD-MM-YYYY"></ion-datetime>
+  </ion-item>
+  
+  <ion-item icon-right>
+    <ion-input type="text" placeholder='{{"addevent.wizard.event.locationph"|translate}}'></ion-input>
+    <ion-icon name="pin" item-right></ion-icon>
+  </ion-item>
+      

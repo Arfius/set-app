@@ -8,6 +8,7 @@ class Task
     this.deadline=new Date();
     this.owner=""
     this.status=0
+    this.isyours=false;
   };
 }
 module.exports = Task;

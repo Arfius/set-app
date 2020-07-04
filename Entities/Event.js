@@ -6,7 +6,9 @@ class Event
     this.title="";
     this.description="";
     this.deadline=new Date();
+    this.partecipants=[];
     this.tasks=[];
+    this.location="";
     this.owner="";
     this.status=0; 
   };

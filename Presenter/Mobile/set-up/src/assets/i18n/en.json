@@ -1,0 +1,56 @@
+{
+    "tab":{
+        "profile":"Profile",
+        "events":"Events",
+        "tasks":"Tasks",
+        "notifications":"Notifications"
+    },
+    "topbar":{
+        "profile":"Profile",
+        "events":"Events",
+        "tasks":"Tasks",
+        "notifications":"Notifications"
+    },
+    "profile":{
+        "events":"Events",
+        "tasks":"Tasks",
+        "edit":"Edit profile"
+    },
+    "addevent":{
+        "footer":{
+            "save":"Save",
+            "next":"Next",
+            "edit":"Edit",
+            "cancel":"Cancel",
+            "previous":"Back"
+        },
+        "wizard":{
+            "event":{
+                "title":"New Event",
+                "titleph":"event name",
+                "descriptionph":"what's about this event",
+                "deadline":"What's the deadline",
+                "locationph":"what's position?"
+            },
+            "contacts":{
+                "title":"Select Partecipants",
+                "invited":"Invited"
+            },
+            "task":{
+                "title":"New Tasks",
+                "titleph":"event name",
+                "descriptionph":"what's about this task",
+                "deadline":"What's the deadline",
+                "owner":"Owner",
+                "labeltome":" I'll do it",
+                "revoke":"Revoke",
+                "assign":"Assign"
+            }
+        }
+    },
+    "events":{
+        "today":"Today",
+        "others":"Other planned list"
+    }
+
+}
